@@ -6,8 +6,14 @@ import 'RandomWordsWidget.dart';
 class StateText extends State<RandomWordsWidget> {
   final _suggestions = <WordPair>[];
 
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-
+  final _biggerFont = const TextStyle(
+      color: Colors.blue,
+      fontSize: 18.0,
+      height: 1.2,
+      backgroundColor: Colors.yellowAccent,
+      fontFamily: "Courier",
+      decoration: TextDecoration.underline,
+      decorationStyle: TextDecorationStyle.dashed);
   final _saved = new Set<WordPair>();
 
   Widget _buildSuggestions() {
@@ -42,7 +48,7 @@ class StateText extends State<RandomWordsWidget> {
     return new ListTile(
       title: text,
       trailing: new Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        alreadySaved ? Icons.delete : Icons.favorite_border,
         color: alreadySaved ? Colors.red : null,
       ),
       onTap: () {
@@ -76,7 +82,7 @@ class StateText extends State<RandomWordsWidget> {
   }
 
   void _pressAction() {
-    Navigator.of(context).pushNamed("new_page");
+    Navigator.of(context).pushNamed("new_page", arguments: "123123");
   }
 
   void _pushSaved() {
