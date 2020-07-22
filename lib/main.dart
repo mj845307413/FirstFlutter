@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutterapp/widget/WillPopScopeTestRoute.dart';
 
 import 'RandomWordsWidget.dart';
 import 'newPage/NewPage.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "new_page": (context) => NewPage(name: "null"),
           "home": (context) => new RandomWordsWidget(),
+          "test": (context) => new WillPopScopeTestRoute()
           //注册首页路由
         });
   }
